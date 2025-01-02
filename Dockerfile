@@ -23,10 +23,10 @@ RUN gpasswd -a ${USER} sudo
 USER orange
 WORKDIR ${HOME}
 
-RUN wget -q -O anaconda.sh https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Linux-x86_64.sh
-RUN bash anaconda.sh -b -p ~/.conda && rm anaconda.sh
+RUN wget -q -O miniconda.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+RUN bash miniconda.sh -b -p ~/.conda && rm miniconda.sh
 RUN $CONDA_DIR/bin/conda create python=3.12 --name orange3
-RUN bash -c "source $CONDA_DIR/bin/activate orange3 && $CONDA_DIR/bin/conda install pyqt orange3 Orange3-Text Orange3-ImageAnalytics --yes -c conda-forge"
+RUN bash -c "source $CONDA_DIR/bin/activate orange3 && $CONDA_DIR/bin/conda install pyqt orange3 Orange3-Text Orange3-ImageAnalytics sqlalchemy pymysql psycopg2-binary pyodbc --yes -c conda-forge"
 RUN echo 'export PATH=~/.conda/bin:$PATH' >> /home/orange/.bashrc
 RUN bash -c "source $CONDA_DIR/bin/activate orange3"
 

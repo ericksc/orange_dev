@@ -1,7 +1,7 @@
 services:
   orange:
     container_name: orange1
-    image: ericksc/orange-data-mining:latest
+    image: ericksc/orange-data-mining-miniconda:latest
     # build:
     #  context: .
     #  dockerfile: ./Dockerfile
