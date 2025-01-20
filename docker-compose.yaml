@@ -3,7 +3,7 @@ services:
     container_name: orange1
     image: ericksc/orange-data-mining-miniconda:latest
     ports:
-      - "5901:5901"
+      # - "5901:5901"
       - "6901:6901"
     volumes:
       - ./src:/opt/src
