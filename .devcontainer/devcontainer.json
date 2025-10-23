@@ -14,20 +14,5 @@
     // Add Docker feature (instala Docker CLI / dind support)
     "features": {
       "ghcr.io/devcontainers/features/docker-in-docker:1": {}
-    },
-
-    // Opcional: montar el socket del host si prefieres usar el Docker del host
-    // (requiere que el host exponga /var/run/docker.sock y permisos adecuados)
-    "mounts": [
-      "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind,consistency=cached"
-    ]
-
-    // Optional: useful if you want docker CLI inside the devcontainer; add a feature
-    // Uncomment and adjust if you use devcontainer features repository.
-    // "features": {
-    //   "ghcr.io/devcontainers/features/docker-in-docker:1": {}
-    // }
-
-    // Optional: if you prefer the command run only once after creation, use postCreateCommand instead:
-    // "postCreateCommand": "docker compose up -d || true"
+    }
 }
