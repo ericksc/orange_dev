@@ -9,10 +9,5 @@
     // Run this every time the codespace container starts.
     // It tries to run `docker compose up -d` if docker is available; it will
     // not fail the startup if docker is missing (safe fallback).
-    "postStartCommand": "/bin/sh -lc 'if command -v docker >/dev/null 2>&1 && docker system info >/dev/null 2>&1; then echo \"Starting docker compose...\" && docker compose up -d || true; else echo \"[info] Docker not available inside container. Add a docker feature or mount the host socket to run docker compose.\"; fi'",
-
-    // Add Docker feature (instala Docker CLI / dind support)
-    "features": {
-      "ghcr.io/devcontainers/features/docker-in-docker:1": {}
-    }
+    "postStartCommand": "/bin/sh -lc 'if command -v docker >/dev/null 2>&1 && docker system info >/dev/null 2>&1; then echo \"Starting docker compose...\" && docker compose up -d || true; else echo \"[info] Docker not available inside container. Add a docker feature or mount the host socket to run docker compose.\"; fi'"
 }
