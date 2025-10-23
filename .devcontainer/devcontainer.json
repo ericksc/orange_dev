@@ -11,9 +11,6 @@
     // not fail the startup if docker is missing (safe fallback).
     "postStartCommand": "/bin/sh -lc 'if command -v docker >/dev/null 2>&1 && docker system info >/dev/null 2>&1; then echo \"Starting docker compose...\" && docker compose up -d || true; else echo \"[info] Docker not available inside container. Add a docker feature or mount the host socket to run docker compose.\"; fi'",
 
-    // Optional: adjust as needed to expose ports your services use
-    "forwardPorts": [ 3000, 8000 ],
-
     // Optional: useful if you want docker CLI inside the devcontainer; add a feature
     // Uncomment and adjust if you use devcontainer features repository.
     // "features": {
